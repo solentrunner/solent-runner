@@ -16,6 +16,7 @@
   --shadow:0 4px 28px rgba(0,32,128,.10);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:'Source Sans 3',sans-serif;background:var(--offwhite);color:var(--text);min-height:100vh}
 
 /* ── TOPBAR ── */
@@ -106,7 +107,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--offwhite);color:var
 #page-pricing{background:var(--offwhite)}
 
 /* ── BOOKING PAGE ── */
-.booking-page-wrap{background:var(--offwhite);min-height:calc(100vh - 170px);padding:2.5rem 1.2rem 4rem}
+.booking-page-wrap{scroll-margin-top:120px;background:var(--offwhite);min-height:calc(100vh - 170px);padding:2.5rem 1.2rem 4rem}
 .booking-page-inner{max-width:700px;margin:0 auto}
 .booking-page-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.1rem);font-weight:900;color:var(--royal);margin-bottom:.4rem}
 .booking-page-sub{color:var(--muted);font-size:.92rem;margin-bottom:1.8rem;line-height:1.6}
@@ -226,6 +227,11 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 /* ── MISC ── */
 .gold{color:var(--gold)}
 @media(max-width:480px){.card{padding:1.4rem 1.2rem}}
+
+.disclaimer-banner{background:#fff3cd;border:2px solid #f4a261;border-radius:12px;padding:1rem 1.3rem;margin:0 auto 1.5rem;max-width:700px;display:flex;align-items:flex-start;gap:.75rem}
+.disclaimer-banner .disc-icon{font-size:1.4rem;flex-shrink:0;line-height:1.2}
+.disclaimer-banner p{font-size:.85rem;color:#7a4a00;line-height:1.65;margin:0}
+.disclaimer-banner strong{color:#5a2d00;font-size:.88rem}
 </style>
 </head>
 <body>
@@ -260,18 +266,18 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 <!-- ══ NAVBAR ══ -->
 <nav class="navbar">
   <div class="navbar-links">
-    <button class="nav-link active" onclick="showPage('home',this)">About Services</button>
-    <button class="nav-link" onclick="showPage('pricing',this)">Pricing</button>
-    <button class="nav-link" onclick="showPage('booking',this)">Booking</button>
+    <a class="nav-link active" href="#about" onclick="showPage('home',this);return false">About Services</a>
+    <a class="nav-link" href="#pricing" onclick="showPage('pricing',this);return false">Pricing</a>
+    <a class="nav-link" href="#booking" onclick="showPage('booking',this);return false">Booking</a>
   </div>
-  <button class="nav-link quote-btn" onclick="showPage('booking',null)">
+  <a class="nav-link quote-btn" href="#booking" onclick="showPage('booking',null);return false">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
     QUOTE NOW
-  </button>
+  </a>
 </nav>
 
 <!-- ══ HOME PAGE ══ -->
-<div class="page active" id="page-home">
+<div class="page active" id="page-home" data-anchor="about">
 
 <section class="hero">
   <div class="hero-layout">
@@ -380,7 +386,13 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 </div><!-- /page-home -->
 
 <!-- ══ PRICING PAGE ══ -->
-<div class="page" id="page-pricing">
+<div class="page" id="page-pricing" data-anchor="pricing">
+<div style="max-width:700px;margin:0 auto 1.5rem;padding:0 1.5rem">
+  <div class="disclaimer-banner">
+    <span class="disc-icon">⚠️</span>
+    <p><strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos).</p>
+  </div>
+</div>
 <section style="background:var(--white);border-bottom:1.5px solid var(--border);padding:3rem 1.5rem">
   <div style="max-width:700px;margin:0 auto">
     <div style="text-align:center;margin-bottom:2rem">
@@ -444,7 +456,7 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 </div><!-- /page-pricing -->
 
 <!-- ══ BOOKING PAGE ══ -->
-<div class="page" id="page-booking">
+<div class="page" id="page-booking" data-anchor="booking">
 <div class="booking-page-wrap">
 <div class="booking-page-inner">
   <h1 class="booking-page-title">Book a Delivery</h1>
@@ -464,12 +476,17 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
       </a>
     </div>
     <div style="font-size:.78rem;color:var(--muted);margin-bottom:1.5rem">📞 <strong>07566 822817</strong> · WeChat ID: <strong>SolentRunner</strong></div>
-    <button class="return-home-btn" onclick="showPage('home',null);resetForm()">
+    <button class="return-home-btn" onclick="showPage('home',null);resetForm();return false">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Back to Home
     </button>
   </div>
 
+  <!-- Important disclaimer -->
+  <div class="disclaimer-banner">
+    <span class="disc-icon">⚠️</span>
+    <p><strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos). Thank you for understanding.</p>
+  </div>
   <!-- FORM STEP 1: YOUR DETAILS -->
   <div class="card" id="form-step1">
     <div class="card-header"><div class="step-badge">1</div><span class="card-title-text">Your Details</span></div>
@@ -621,10 +638,10 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 </footer>
 
 <!-- Floating mobile button -->
-<button class="fab-quote" onclick="showPage('booking',null)">
+<a class="fab-quote" href="#booking" onclick="showPage('booking',null);return false">
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
   QUOTE NOW
-</button>
+</a>
 
 <!-- PRIVACY MODAL -->
 <div id="privacy-modal" onclick="if(event.target===this)closePrivacy()">

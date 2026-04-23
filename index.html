@@ -1926,7 +1926,7 @@
         I accept full legal responsibility for the contents of this delivery and understand that <strong>Solent Runner</strong> is not liable for any unlawful items provided by the customer.
       </div>
       <label class="checkbox-row">
-        <input type="checkbox" id="legal-confirm"/>
+        <input type="checkbox" id="legal-confirm" onchange="updateSubmitBtn()"/>
         <span class="checkbox-label" data-i18n="decl_check">I confirm the items are safe and legal to transport.</span>
       </label>
       <div class="decl-error" id="decl-error" data-i18n="decl_error">
@@ -1937,7 +1937,7 @@
     <!-- Privacy & Consent Checkbox -->
     <div class="consent-box">
       <label class="consent-row">
-        <input type="checkbox" id="privacy-consent"/>
+        <input type="checkbox" id="privacy-consent" onchange="updateSubmitBtn()"/>
         <span class="consent-label" data-i18n="consent_label">
           I have read and agree to the
           <a onclick="openPrivacy();return false" href="#">Privacy Policy</a>
@@ -1949,7 +1949,7 @@
       </div>
     </div>
 
-    <button id="submit-btn" data-i18n="submit_btn">
+    <button id="submit-btn" disabled data-i18n="submit_btn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       Send Booking Request
     </button>
@@ -2817,9 +2817,13 @@ function initBookingListeners() {
   attachClearOnInput('delivery-date',   'wrap-delivery-date',   'err-delivery-date');
   attachClearOnInput('delivery-time-fp','wrap-delivery-time',   'err-delivery-time');
 
-  legalEl.addEventListener('change', () => {
-    document.getElementById('decl-error').classList.remove('show');
-  });
+  // Wire both checkboxes to gate the submit button
+  legalEl.addEventListener('change', updateSubmitBtn);
+  const consentEl = document.getElementById('privacy-consent');
+  if (consentEl) consentEl.addEventListener('change', updateSubmitBtn);
+
+  // Run once to set initial state
+  updateSubmitBtn();
 
   submitEl.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -2912,36 +2916,24 @@ async function handleBookingSubmit() {
       reply_to:        phone,
     };
 
-    try {
-      const sheetsPayload = JSON.stringify(templateParams);
+    // ── Fire and forget: Sheets + EmailJS ──
+    const sheetsPayload = JSON.stringify(templateParams);
 
-      // Send to Google Sheets (fire and forget — don't block success)
-      if (SHEETS_URL && SHEETS_URL.includes('script.google.com')) {
-        fetch(SHEETS_URL, {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: sheetsPayload
-        }).catch(e => console.warn('Sheets log failed:', e));
-      }
-
-      // Send via EmailJS
-      try {
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
-      } catch (emailErr) {
-        // Log but don't block — customer still sees success
-        console.warn('EmailJS error (showing success anyway):', emailErr);
-      }
-
-      // Always show success screen after attempt
-      showSuccessScreen();
-
-    } catch (err) {
-      console.error('Submission error:', err);
-      errEl.textContent = '⚠ Could not send — please WhatsApp us directly on 07566 822817.';
-      errEl.style.display = 'block';
-      btn.disabled = false;
-      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Booking Request';
+    if (SHEETS_URL && SHEETS_URL.includes('script.google.com')) {
+      fetch(SHEETS_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: sheetsPayload
+      }).catch(e => console.warn('Sheets failed:', e));
     }
+
+    if (typeof emailjs !== 'undefined') {
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+        .catch(e => console.warn('EmailJS failed (non-blocking):', e));
+    }
+
+    // ── Always show success — never block on network ──
+    showSuccessScreen();
 } // end handleBookingSubmit
 
 
@@ -2964,12 +2956,25 @@ document.addEventListener('click', function(e) {
 // Close on Escape key
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePrivacy(); });
 
-function toggleSubmitBtn() {
-  // submit is always enabled — validation happens on click
-  const el = document.getElementById('consent-error');
-  const cb = document.getElementById('privacy-consent');
-  if (el && cb && cb.checked) el.classList.remove('show');
+function updateSubmitBtn() {
+  const legal    = document.getElementById('legal-confirm');
+  const consent  = document.getElementById('privacy-consent');
+  const btn      = document.getElementById('submit-btn');
+  if (!btn) return;
+  const bothChecked = legal && consent && legal.checked && consent.checked;
+  btn.disabled = !bothChecked;
+  // Clear consent error if now checked
+  if (consent && consent.checked) {
+    const ce = document.getElementById('consent-error');
+    if (ce) ce.classList.remove('show');
+  }
+  if (legal && legal.checked) {
+    const de = document.getElementById('decl-error');
+    if (de) de.classList.remove('show');
+  }
 }
+// Keep legacy alias so any old onchange="toggleSubmitBtn()" still works
+function toggleSubmitBtn() { updateSubmitBtn(); }
 
 function selectContact(btn) {
   document.querySelectorAll('.cm-btn').forEach(b => b.classList.remove('active'));
@@ -3005,8 +3010,7 @@ function resetBookingForm() {
   document.querySelectorAll('.cm-btn').forEach((b,i) => b.classList.toggle('active', i===0));
   document.getElementById('legal-confirm').checked = false;
   document.getElementById('privacy-consent').checked = false;
-  document.getElementById('submit-btn').disabled = true;
-  document.getElementById('submit-btn').disabled = false;
+  updateSubmitBtn(); // resets to disabled since checkboxes are unchecked
   document.getElementById('submit-btn').innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Booking Request';
   resetPins();
   window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -522,7 +522,7 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
         <div class="field-error" id="err-name">This field is required</div>
       </div>
       <div class="field" id="wrap-phone">
-        <label><span data-i18n="label_phone">WhatsApp / Phone</span> <span style="color:var(--danger)">*</span></label>
+        <label><span data-i18n="label_phone">WhatsApp / Phone / WeChat ID</span> <span style="color:var(--danger)">*</span></label>
         <input type="tel" id="f-phone" placeholder=""/>
         <div class="field-error" id="err-phone">This field is required</div>
       </div>
@@ -569,14 +569,14 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
       <div class="field-error" id="err-items">This field is required</div>
     </div>
     <div class="field">
-      <label><span data-i18n="label_weight">Estimated Weight</span> (optional)</label>
+      <label><span data-i18n="label_weight">Estimated Weight</span> <span data-i18n="label_optional">(optional)</span></label>
       <div class="weight-row">
         <input type="number" id="f-weight" min="0" step="0.1" placeholder="e.g. 2.5"/>
         <select id="f-weight-unit"><option value="kg">kg</option><option value="lbs">lbs</option><option value="g">g</option></select>
       </div>
     </div>
     <div class="field">
-      <label><span data-i18n="label_notes">Special Instructions</span> (optional)</label>
+      <label><span data-i18n="label_notes">Special Instructions</span> <span data-i18n="label_optional">(optional)</span></label>
       <textarea id="f-notes" placeholder="e.g. Leave at door, call on arrival…" style="min-height:70px"></textarea>
     </div>
     <div class="field-group-title" data-i18n="label_contact_method">Preferred Contact Method</div>
@@ -695,7 +695,7 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 const EMAILJS_SERVICE_ID  = 'service_lkm1414';
 const EMAILJS_TEMPLATE_ID = 'template_5l63r3d';
 const EMAILJS_PUBLIC_KEY  = 'qnjW58TVJXb8StCeo';
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzQf86i0z5QpOZoxyhzMYpuf2ZLXhRZ54yDtWjgyqVMJfTAxexRHrSI3M76_Ypy71C8/exec';
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyA2KQ6_2P0uHbNRNuYa-DzTez8V4Z3EtS6Fr-YlkeKLJaWo1eULjwq9DL7hbmKfLCF/exec';
 
 // ── PAGE ROUTER ──
 function showPage(name, clickedLink) {
@@ -749,11 +749,11 @@ var T = {
     booking_disclaimer: '<strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos). Thank you for understanding.',
     pricing_disclaimer: '<strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos).',
     step1_title: 'Your Details', contact_info: 'Contact Information',
-    label_name: 'Full Name', label_phone: 'WhatsApp / Phone', label_service: 'Service Type',
+    label_name: 'Full Name', label_phone: 'Phone / WhatsApp / WeChat ID', label_service: 'Service Type',
     label_pickup: 'Pickup Address (Full Address)', label_delivery: 'Delivery Address (Full Address)',
     label_pudt: 'Pickup Date &amp; Time', label_dldt: 'Delivery Date &amp; Time',
     label_date: 'Date', label_time: 'Time', label_items: 'Item Description',
-    label_weight: 'Estimated Weight', label_notes: 'Special Instructions',
+    label_weight: 'Estimated Weight', label_notes: 'Special Instructions', label_optional: '(optional)',
     label_contact_method: 'Preferred Contact Method',
     opt_select: '— Select a service —', opt_express: 'Express Delivery (from £7)', opt_shopping: 'Shopping Service (from £10)',
     opt_errands: 'Personal Errands', opt_documents: 'Business Documents', opt_gifts: 'Gifts &amp; Hampers', opt_urgent: 'Urgent Essentials',
@@ -814,11 +814,11 @@ var T = {
     booking_disclaimer: '<strong>重要：</strong>我們專注於輕型搬運及小型物品。我們<strong>不提供</strong>大型家具搬運服務（例如梳化、衣櫃或鋼琴）。感謝理解。',
     pricing_disclaimer: '<strong>重要：</strong>我們專注於輕型搬運及小型物品。我們<strong>不提供</strong>大型家具搬運服務（例如梳化、衣櫃或鋼琴）。',
     step1_title: '您的資料', contact_info: '聯絡資料',
-    label_name: '全名', label_phone: 'WhatsApp / 電話', label_service: '服務類型',
+    label_name: '全名', label_phone: '電話 / WhatsApp / 微信', label_service: '服務類型',
     label_pickup: '取貨地址（完整地址）', label_delivery: '送貨地址（完整地址）',
     label_pudt: '取貨日期 &amp; 時間', label_dldt: '送貨日期 &amp; 時間',
     label_date: '日期', label_time: '時間', label_items: '物品說明',
-    label_weight: '估計重量', label_notes: '特別要求',
+    label_weight: '估計重量', label_notes: '特別要求', label_optional: '（選填）',
     label_contact_method: '首選聯絡方式',
     opt_select: '— 請選擇服務 —', opt_express: '快遞服務（起價 £7）', opt_shopping: '購物服務（起價 £10）',
     opt_errands: '私人跑腿', opt_documents: '商業文件', opt_gifts: '禮品 &amp; 禮籃', opt_urgent: '緊急必需品',
@@ -879,11 +879,11 @@ var T = {
     booking_disclaimer: '<strong>重要：</strong>我们专注于轻型搬运及小型物品。我们<strong>不提供</strong>大型家具搬运服务（例如沙发、衣柜或钢琴）。感谢理解。',
     pricing_disclaimer: '<strong>重要：</strong>我们专注于轻型搬运及小型物品。我们<strong>不提供</strong>大型家具搬运服务（例如沙发、衣柜或钢琴）。',
     step1_title: '您的资料', contact_info: '联络资料',
-    label_name: '全名', label_phone: 'WhatsApp / 电话', label_service: '服务类型',
+    label_name: '全名', label_phone: '电话 / WhatsApp / 微信', label_service: '服务类型',
     label_pickup: '取货地址（完整地址）', label_delivery: '送货地址（完整地址）',
     label_pudt: '取货日期 &amp; 时间', label_dldt: '送货日期 &amp; 时间',
     label_date: '日期', label_time: '时间', label_items: '物品说明',
-    label_weight: '预计重量', label_notes: '特别要求',
+    label_weight: '预计重量', label_notes: '特别要求', label_optional: '（选填）',
     label_contact_method: '首选联络方式',
     opt_select: '— 请选择服务 —', opt_express: '快递服务（起价 £7）', opt_shopping: '购物服务（起价 £10）',
     opt_errands: '私人跑腿', opt_documents: '商业文件', opt_gifts: '礼品 &amp; 礼篮', opt_urgent: '紧急必需品',

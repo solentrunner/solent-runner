@@ -266,13 +266,13 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 <!-- ══ NAVBAR ══ -->
 <nav class="navbar">
   <div class="navbar-links">
-    <a class="nav-link active" href="#about" onclick="showPage('home',this);return false">About</a>
-    <a class="nav-link" href="#pricing" onclick="showPage('pricing',this);return false">Pricing</a>
-    <a class="nav-link" href="#booking" onclick="showPage('booking',this);return false">Booking</a>
+    <a class="nav-link active" href="#about" onclick="showPage('home',this);return false" data-i18n="nav_about">About</a>
+    <a class="nav-link" href="#pricing" onclick="showPage('pricing',this);return false" data-i18n="nav_pricing">Pricing</a>
+    <a class="nav-link" href="#booking" onclick="showPage('booking',this);return false" data-i18n="nav_booking">Booking</a>
   </div>
   <a class="nav-link quote-btn" href="#booking" onclick="showPage('booking',null);return false">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-    QUOTE NOW
+    <span data-i18n="nav_quote">QUOTE NOW</span>
   </a>
 </nav>
 
@@ -346,21 +346,21 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 <div style="max-width:700px;margin:0 auto 1.5rem;padding:0 1.5rem">
   <div class="disclaimer-banner">
     <span class="disc-icon">⚠️</span>
-    <p><strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos).</p>
+    <p data-i18n="pricing_disclaimer"><strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos).</p>
   </div>
 </div>
 <section style="background:var(--white);border-bottom:1.5px solid var(--border);padding:3rem 1.5rem">
   <div style="max-width:700px;margin:0 auto">
     <div style="text-align:center;margin-bottom:2rem">
-      <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--royal);margin-bottom:.5rem">Simple, Transparent Pricing</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:900;color:var(--text)">What Does It Cost?</h2>
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--royal);margin-bottom:.5rem" data-i18n="pricing_eyebrow">Simple, Transparent Pricing</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:900;color:var(--text)" data-i18n="pricing_title">What Does It Cost?</h2>
     </div>
     <!-- Grand Opening Offer banner -->
     <div style="background:linear-gradient(135deg,#002080,#0033cc);border-radius:14px;padding:1rem 1.4rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem">
       <div style="font-size:1.6rem;flex-shrink:0">🎉</div>
       <div>
-        <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;color:#c8a84b;margin-bottom:.15rem">Grand Opening Offer</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5">Special launch prices — limited time only. Book now to lock in your rate!</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;color:#c8a84b;margin-bottom:.15rem" data-i18n="grand_opening">Grand Opening Offer</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.5" data-i18n="grand_opening_sub">Special launch prices — limited time only. Book now to lock in your rate!</div>
       </div>
     </div>
 
@@ -372,17 +372,15 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
         <!-- Launch Offer badge -->
         <div style="position:absolute;top:0;left:0;background:#e74c3c;color:white;font-size:.62rem;font-weight:800;padding:.28rem .65rem;border-bottom-right-radius:10px;letter-spacing:.05em">🚀 LAUNCH OFFER</div>
         <div style="font-size:1.8rem;margin-bottom:.5rem;margin-top:.8rem">🛵</div>
-        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:.97rem;color:var(--royal);margin-bottom:.5rem">Express Pickup &amp; Drop-off</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:.97rem;color:var(--royal);margin-bottom:.5rem" data-i18n="svc_card1_title">Express Pickup &amp; Drop-off</div>
         <!-- Strike-through old price -->
-        <div style="font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-bottom:.1rem">Was £15.00</div>
+        <div style="font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-bottom:.1rem" data-i18n="svc_card1_was">Was £15.00</div>
         <!-- New price -->
         <div style="font-size:2.1rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--royal);line-height:1;margin-bottom:.25rem">£7<span style="font-size:1rem;font-weight:400;color:var(--muted)">.00</span></div>
-        <div style="font-size:.72rem;color:#27ae60;font-weight:700;margin-bottom:.8rem">Save £8 · First 2 miles included</div>
-        <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem">For items already packed or pre-paid &lsquo;Click &amp; Collect&rsquo;. Fast door-to-door delivery.</p>
+        <div style="font-size:.72rem;color:#27ae60;font-weight:700;margin-bottom:.8rem" data-i18n="svc_card1_save">Save £8 · First 2 miles included</div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem" data-i18n="svc_card1_desc">For items already packed or pre-paid &lsquo;Click &amp; Collect&rsquo;. Fast door-to-door delivery.</p>
         <ul style="list-style:none;padding:0;font-size:.8rem;color:var(--muted)">
-          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> +£1.00 per mile after 2 miles</li>
-          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> Documents, parcels &amp; pre-packed items</li>
-          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> Same-day delivery</li>
+          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> <span data-i18n="svc_card1_li1">Documents, parcels &amp; pre-packed items</span></li>
         </ul>
       </div>
 
@@ -391,17 +389,16 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
         <!-- Launch Offer badge -->
         <div style="position:absolute;top:0;left:0;background:#e74c3c;color:white;font-size:.62rem;font-weight:800;padding:.28rem .65rem;border-bottom-right-radius:10px;letter-spacing:.05em">🚀 LAUNCH OFFER</div>
         <div style="font-size:1.8rem;margin-bottom:.5rem;margin-top:.8rem">🛍️</div>
-        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:.97rem;color:var(--text);margin-bottom:.5rem">Personal Shopping Service</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:.97rem;color:var(--text);margin-bottom:.5rem" data-i18n="svc_card2_title">Personal Shopping Service</div>
         <!-- Strike-through old price -->
-        <div style="font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-bottom:.1rem">Was £20.00</div>
+        <div style="font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-bottom:.1rem" data-i18n="svc_card2_was">Was £20.00</div>
         <!-- New price -->
         <div style="font-size:2.1rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--text);line-height:1;margin-bottom:.25rem">£10<span style="font-size:1rem;font-weight:400;color:var(--muted)">.00</span></div>
-        <div style="font-size:.72rem;color:#27ae60;font-weight:700;margin-bottom:.8rem">Save £10 · + delivery charge on top</div>
-        <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem">We go into the store, pick the items on your list, and deliver them to you. <em>Cost of items not included.</em></p>
+        <div style="font-size:.72rem;color:#27ae60;font-weight:700;margin-bottom:.8rem" data-i18n="svc_card2_save">Save £10 · + delivery charge on top</div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem" data-i18n="svc_card2_desc">We go into the store, pick the items on your list, and deliver them to you. <em>Cost of items not included.</em></p>
         <ul style="list-style:none;padding:0;font-size:.8rem;color:var(--muted)">
-          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> Supermarkets, pharmacies &amp; more</li>
-          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> Full receipt provided on delivery</li>
-          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> +£1.50 per mile after 2 miles</li>
+          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> <span data-i18n="svc_card2_li1">Supermarkets, pharmacies &amp; more</span></li>
+          <li style="padding:.2rem 0;display:flex;gap:.4rem"><span style="color:var(--royal);font-weight:700">›</span> <span data-i18n="svc_card2_li2">Full receipt provided on delivery</span></li>
         </ul>
       </div>
     </div>
@@ -409,7 +406,7 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
     <!-- Surcharges section -->
     <div style="background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1rem">
       <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;color:var(--royal);margin-bottom:.9rem;display:flex;align-items:center;gap:.45rem">
-        📋 Surcharges &amp; Additional Rates
+        <span data-i18n="surcharge_title">📋 Surcharges &amp; Additional Rates</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:.6rem">
 
@@ -418,8 +415,8 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
           <div style="display:flex;align-items:flex-start;gap:.6rem">
             <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem">📏</span>
             <div>
-              <div style="font-weight:700;font-size:.85rem;color:var(--text)">Mileage</div>
-              <div style="font-size:.76rem;color:var(--muted);margin-top:.1rem">First 2 miles included, then £1.00 per mile</div>
+              <div style="font-weight:700;font-size:.85rem;color:var(--text)" data-i18n="sur_mileage">Mileage</div>
+              <div style="font-size:.76rem;color:var(--muted);margin-top:.1rem" data-i18n="sur_mileage_sub">First 2 miles included, then £1.00 per mile</div>
             </div>
           </div>
           <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;color:var(--royal);white-space:nowrap;flex-shrink:0">+£1.00<span style="font-size:.7rem;font-weight:400;color:var(--muted)">/mile</span></div>
@@ -430,8 +427,8 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
           <div style="display:flex;align-items:flex-start;gap:.6rem">
             <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem">⚡</span>
             <div>
-              <div style="font-weight:700;font-size:.85rem;color:var(--text)">Same-Day Delivery</div>
-              <div style="font-size:.76rem;color:var(--muted);margin-top:.1rem">Perfect for urgent local parcels</div>
+              <div style="font-weight:700;font-size:.85rem;color:var(--text)" data-i18n="sur_sameday">Same-Day Delivery</div>
+              <div style="font-size:.76rem;color:var(--muted);margin-top:.1rem" data-i18n="sur_sameday_sub">Perfect for urgent local parcels</div>
             </div>
           </div>
           <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;color:var(--royal);white-space:nowrap;flex-shrink:0">+£5.00</div>
@@ -442,8 +439,8 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
           <div style="display:flex;align-items:flex-start;gap:.6rem">
             <span style="font-size:1rem;flex-shrink:0;margin-top:.05rem">🌙</span>
             <div>
-              <div style="font-weight:700;font-size:.85rem;color:white">Midnight Express <span style="font-size:.72rem;font-weight:600;color:#c8a84b;margin-left:.3rem">12am – 6am</span></div>
-              <div style="font-size:.76rem;color:rgba(255,255,255,.55);margin-top:.1rem">Special late-night rate</div>
+              <div style="font-weight:700;font-size:.85rem;color:white"><span data-i18n="sur_midnight">Midnight Express</span> <span style="font-size:.72rem;font-weight:600;color:#c8a84b;margin-left:.3rem" data-i18n="sur_midnight_time">12am – 6am</span></div>
+              <div style="font-size:.76rem;color:rgba(255,255,255,.55);margin-top:.1rem" data-i18n="sur_midnight_sub">Special late-night rate</div>
             </div>
           </div>
           <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;color:#c8a84b;white-space:nowrap;flex-shrink:0">+£10.00</div>
@@ -452,18 +449,10 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
       </div>
     </div>
 
-    <!-- Disclaimer box -->
-    <div style="background:#fff3cd;border:2px solid #e67e22;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.2rem;display:flex;align-items:flex-start;gap:.7rem">
-      <span style="font-size:1.3rem;flex-shrink:0;line-height:1.3">⚠️</span>
-      <div style="font-size:.83rem;color:#7a3d00;line-height:1.7">
-        <strong style="color:#5a2d00;display:block;margin-bottom:.2rem">Note: Light Items Only</strong>
-        We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. sofas, wardrobes, or pianos). Thank you for understanding.
-      </div>
-    </div>
     <!-- Payment methods -->
     <div style="background:var(--white);border-radius:14px;padding:1.4rem 1.5rem">
       <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:.45rem">
-        <span>💳</span> Accepted Payment Methods
+        <span data-i18n="payment_title">💳 Accepted Payment Methods</span>
       </div>
       <div class="payment-logo-row">
         <div class="pay-pill" title="Bank Transfer">
@@ -483,8 +472,8 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
           <svg height="20" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#EB001B"/><circle cx="26" cy="12" r="12" fill="#F79E1B"/><path d="M19 4.8a12 12 0 010 14.4A12 12 0 0119 4.8z" fill="#FF5F00"/></svg>
         </div>
       </div>
-      <p style="font-size:.76rem;color:var(--muted);margin-bottom:.4rem">Full details will be provided upon booking confirmation.</p>
-      <p style="font-size:.76rem;color:var(--muted)">Payment is collected after delivery is confirmed. No upfront charge.</p>
+      <p style="font-size:.76rem;color:var(--muted);margin-bottom:.4rem" data-i18n="payment_note">Full details will be provided upon booking confirmation.</p>
+      <p style="font-size:.76rem;color:var(--muted)" data-i18n="payment_note2">Payment is collected after delivery is confirmed. No upfront charge.</p>
     </div>
   </div>
 </section>
@@ -502,45 +491,45 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
     <div class="success-check">
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
-    <div class="success-title">Booking Request Received!</div>
-    <p class="success-subtitle">Thank you for choosing Solent Runner. We have received your details and will contact you shortly via WhatsApp or Email to confirm your booking.</p>
+    <div class="success-title" data-i18n="success_title">Booking Request Received!</div>
+    <p class="success-subtitle" data-i18n="success_sub">Thank you for choosing Solent Runner. We have received your details and will contact you shortly via WhatsApp or Email to confirm your booking.</p>
     <div style="margin-bottom:1rem">
       <a class="success-wa-btn" href="https://wa.me/447566822817" target="_blank">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Us
+        <span data-i18n="success_wa">💬 WhatsApp Us</span>
       </a>
     </div>
     <div style="font-size:.78rem;color:var(--muted);margin-bottom:1.5rem">📞 <strong>07566 822817</strong> · WeChat ID: <strong>SolentRunner</strong></div>
     <button class="return-home-btn" onclick="showPage('home',null);resetForm();return false">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Back to Home
+      <span data-i18n="success_back">Back to Home</span>
     </button>
   </div>
 
   <!-- Important disclaimer -->
   <div class="disclaimer-banner">
     <span class="disc-icon">⚠️</span>
-    <p><strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos). Thank you for understanding.</p>
+    <p data-i18n="booking_disclaimer"><strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos). Thank you for understanding.</p>
   </div>
   <!-- FORM STEP 1: YOUR DETAILS -->
   <div class="card" id="form-step1">
-    <div class="card-header"><div class="step-badge">1</div><span class="card-title-text">Your Details</span></div>
-    <div class="field-group-title">Contact Information</div>
+    <div class="card-header"><div class="step-badge">1</div><span class="card-title-text" data-i18n="step1_title">Your Details</span></div>
+    <div class="field-group-title" data-i18n="contact_info">Contact Information</div>
     <div class="form-grid-2">
       <div class="field" id="wrap-name">
-        <label>Full Name <span style="color:var(--danger)">*</span></label>
+        <label><span data-i18n="label_name">Full Name</span> <span style="color:var(--danger)">*</span></label>
         <input type="text" id="f-name" placeholder=""/>
         <div class="field-error" id="err-name">This field is required</div>
       </div>
       <div class="field" id="wrap-phone">
-        <label>WhatsApp / Phone <span style="color:var(--danger)">*</span></label>
+        <label><span data-i18n="label_phone">WhatsApp / Phone</span> <span style="color:var(--danger)">*</span></label>
         <input type="tel" id="f-phone" placeholder=""/>
         <div class="field-error" id="err-phone">This field is required</div>
       </div>
     </div>
-    <div class="field-group-title">Delivery Details</div>
+    <div class="field-group-title" data-i18n="delivery_details">Delivery Details</div>
     <div class="field" id="wrap-service">
-      <label>Service Type <span style="color:var(--danger)">*</span></label>
+      <label><span data-i18n="label_service">Service Type</span> <span style="color:var(--danger)">*</span></label>
       <select id="f-service">
         <option value="">— Select a service —</option>
         <option value="express">Express Delivery (from £7)</option>
@@ -554,43 +543,43 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
     </div>
     <div class="form-grid-2">
       <div class="field" id="wrap-pickup">
-        <label>Pickup Address (Full Address) <span style="color:var(--danger)">*</span></label>
+        <label><span data-i18n="label_pickup">Pickup Address (Full Address)</span> <span style="color:var(--danger)">*</span></label>
         <input type="text" id="f-pickup" placeholder="" autocomplete="off"/>
         <div class="field-error" id="err-pickup">This field is required</div>
       </div>
       <div class="field" id="wrap-delivery">
-        <label>Delivery Address (Full Address) <span style="color:var(--danger)">*</span></label>
+        <label><span data-i18n="label_delivery">Delivery Address (Full Address)</span> <span style="color:var(--danger)">*</span></label>
         <input type="text" id="f-delivery" placeholder="" autocomplete="off"/>
         <div class="field-error" id="err-delivery">This field is required</div>
       </div>
     </div>
-    <div class="field-group-title">Pickup Date &amp; Time <span style="color:var(--danger)">*</span></div>
+    <div class="field-group-title"><span data-i18n="label_pudt">Pickup Date &amp; Time</span> <span style="color:var(--danger)">*</span></div>
     <div class="dt-split-grid">
-      <div class="field" id="wrap-pu-date"><label>Date <span style="color:var(--danger)">*</span></label><input type="date" id="f-pu-date"/><div class="field-error" id="err-pu-date">This field is required</div></div>
-      <div class="field" id="wrap-pu-time"><label>Time <span style="color:var(--danger)">*</span></label><input type="time" id="f-pu-time"/><div class="field-error" id="err-pu-time">This field is required</div></div>
+      <div class="field" id="wrap-pu-date"><label><span data-i18n="label_date">Date</span> <span style="color:var(--danger)">*</span></label><input type="date" id="f-pu-date"/><div class="field-error" id="err-pu-date">This field is required</div></div>
+      <div class="field" id="wrap-pu-time"><label><span data-i18n="label_time">Time</span> <span style="color:var(--danger)">*</span></label><input type="time" id="f-pu-time"/><div class="field-error" id="err-pu-time">This field is required</div></div>
     </div>
-    <div class="field-group-title">Delivery Date &amp; Time <span style="color:var(--danger)">*</span></div>
+    <div class="field-group-title"><span data-i18n="label_dldt">Delivery Date &amp; Time</span> <span style="color:var(--danger)">*</span></div>
     <div class="dt-split-grid">
-      <div class="field" id="wrap-dl-date"><label>Date <span style="color:var(--danger)">*</span></label><input type="date" id="f-dl-date"/><div class="field-error" id="err-dl-date">This field is required</div></div>
-      <div class="field" id="wrap-dl-time"><label>Time <span style="color:var(--danger)">*</span></label><input type="time" id="f-dl-time"/><div class="field-error" id="err-dl-time">This field is required</div></div>
+      <div class="field" id="wrap-dl-date"><label><span data-i18n="label_date">Date</span> <span style="color:var(--danger)">*</span></label><input type="date" id="f-dl-date"/><div class="field-error" id="err-dl-date">This field is required</div></div>
+      <div class="field" id="wrap-dl-time"><label><span data-i18n="label_time">Time</span> <span style="color:var(--danger)">*</span></label><input type="time" id="f-dl-time"/><div class="field-error" id="err-dl-time">This field is required</div></div>
     </div>
     <div class="field" id="wrap-items">
-      <label>Item Details / Shopping List <span style="color:var(--danger)">*</span></label>
+      <label><span data-i18n="label_items">Item Details / Shopping List</span> <span style="color:var(--danger)">*</span></label>
       <textarea id="f-items" placeholder="e.g. Documents, Groceries, Flowers…" style="min-height:110px"></textarea>
       <div class="field-error" id="err-items">This field is required</div>
     </div>
     <div class="field">
-      <label>Estimated Weight (optional)</label>
+      <label><span data-i18n="label_weight">Estimated Weight</span> (optional)</label>
       <div class="weight-row">
         <input type="number" id="f-weight" min="0" step="0.1" placeholder="e.g. 2.5"/>
         <select id="f-weight-unit"><option value="kg">kg</option><option value="lbs">lbs</option><option value="g">g</option></select>
       </div>
     </div>
     <div class="field">
-      <label>Special Instructions (optional)</label>
+      <label><span data-i18n="label_notes">Special Instructions</span> (optional)</label>
       <textarea id="f-notes" placeholder="e.g. Leave at door, call on arrival…" style="min-height:70px"></textarea>
     </div>
-    <div class="field-group-title">Preferred Contact Method</div>
+    <div class="field-group-title" data-i18n="label_contact_method">Preferred Contact Method</div>
     <div class="contact-method-row" id="contact-row">
       <button type="button" class="cm-btn active" data-value="WhatsApp" onclick="selectContact(this)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -613,32 +602,32 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 
   <!-- FORM STEP 2: CONFIRM & SUBMIT -->
   <div class="card" id="form-step2">
-    <div class="card-header"><div class="step-badge">2</div><span class="card-title-text">Confirm &amp; Submit</span></div>
+    <div class="card-header"><div class="step-badge">2</div><span class="card-title-text" data-i18n="step2_title">Confirm &amp; Submit</span></div>
 
     <!-- Prohibited Items Declaration -->
     <div class="declaration-box">
-      <div class="decl-title">⚠ Prohibited Items Declaration</div>
-      <div class="decl-body">By ticking this box, I confirm that this delivery does not contain <strong>drugs, explosives, flammables, tobacco, alcohol, or any illegal goods under UK law.</strong><br><br>
+      <div class="decl-title" data-i18n="decl_box_title">⚠ Prohibited Items Declaration</div>
+      <div class="decl-body" data-i18n="decl_box_body">By ticking this box, I confirm that this delivery does not contain <strong>drugs, explosives, flammables, tobacco, alcohol, or any illegal goods under UK law.</strong><br><br>
       I accept full legal responsibility for the contents of this delivery and understand that <strong>Solent Runner</strong> is not liable for any unlawful items provided by the customer.</div>
       <label class="checkbox-row">
         <input type="checkbox" id="cb-legal" onchange="updateSubmitBtn()"/>
-        <span class="checkbox-label">I confirm the items are safe and legal to transport.</span>
+        <span class="checkbox-label" data-i18n="decl_confirm">I confirm the items are safe and legal to transport.</span>
       </label>
-      <div class="decl-error" id="err-legal">⛔ You must confirm your items are legal to transport.</div>
+      <div class="decl-error" id="err-legal" data-i18n="decl_error">⛔ You must confirm your items are legal to transport.</div>
     </div>
 
     <!-- Privacy Consent -->
     <div class="consent-box">
       <label class="consent-row">
         <input type="checkbox" id="cb-privacy" onchange="updateSubmitBtn()"/>
-        <span class="consent-label">I have read and agree to the <a onclick="openPrivacy();return false" href="#">Privacy Policy</a> and confirm that no prohibited items are included in this request.</span>
+        <span class="consent-label" data-i18n="consent_label">I have read and agree to the <a onclick="openPrivacy();return false" href="#">Privacy Policy</a> and confirm that no prohibited items are included in this request.</span>
       </label>
-      <div class="consent-error" id="err-privacy">⚠ Please read and accept the Privacy Policy before submitting.</div>
+      <div class="consent-error" id="err-privacy" data-i18n="consent_error">⚠ Please read and accept the Privacy Policy before submitting.</div>
     </div>
 
     <button id="submit-btn" disabled onclick="handleSubmit(event)">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-      Send Booking Request
+      <span data-i18n="btn_submit">Send Booking Request</span>
     </button>
     <div id="submit-error"></div>
   </div>
@@ -650,24 +639,24 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
   <div class="footer-inner">
     <div>
       <div class="footer-brand" data-i18n="brand_name">Solent Runner</div>
-      <div class="footer-legal">
+      <div class="footer-legal" data-i18n="footer_legal">
         Solent Runner is a trading name of <strong>Ming Chak Lai</strong>.<br>
         Serving Portsmouth &bull; Havant &bull; Cosham.
       </div>
     </div>
     <hr class="footer-divider"/>
     <div>
-      <div class="footer-hours-title">Operating Hours</div>
-      <div class="footer-hours-body">Flexible service based on availability.<br>For the fastest response and to check if we are running today, please WhatsApp us.</div>
+      <div class="footer-hours-title" data-i18n="footer_hours_title">Operating Hours</div>
+      <div class="footer-hours-body" data-i18n="footer_hours_body">Flexible service based on availability.<br>For the fastest response and to check if we are running today, please WhatsApp us.</div>
       <a class="footer-wa-btn" href="https://wa.me/447566822817" target="_blank">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Us
+        <span data-i18n="footer_wa">WhatsApp Us</span>
       </a>
     </div>
     <div class="footer-copy">
-      &copy; 2026 Solent Runner. All rights reserved. Registered as a Sole Trader in the UK.
+      <span data-i18n="footer_rights">© 2026 Solent Runner. All rights reserved. Registered as a Sole Trader in the UK.</span>
       &nbsp;&middot;&nbsp;
-      <button class="privacy-link" onclick="openPrivacy()">Privacy Policy</button>
+      <button class="privacy-link" onclick="openPrivacy()" data-i18n="footer_privacy">Privacy Policy</button>
     </div>
   </div>
 </footer>
@@ -675,7 +664,7 @@ footer{background:var(--royal);color:rgba(255,255,255,.65);padding:2.5rem 1.5rem
 <!-- Floating mobile button -->
 <a class="fab-quote" href="#booking" onclick="showPage('booking',null);return false">
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-  QUOTE NOW
+  <span data-i18n="fab_label">QUOTE NOW</span>
 </a>
 
 <!-- PRIVACY MODAL -->
@@ -739,6 +728,57 @@ var T = {
     svc2_tasks: ['Urgent contract delivery','Signed document courier','Office supply restocking','Bank &amp; legal paperwork'],
     svc3_tasks: ['Same-hour express delivery','Keys, chargers &amp; forgotten items','Medical supplies &amp; equipment','Emergency home supplies'],
     svc4_tasks: ['Birthday &amp; occasion gifts','Curated hamper assembly','Florist &amp; cake collection','Personal message included'],
+    nav_about: 'About', nav_pricing: 'Pricing', nav_booking: 'Booking', nav_quote: 'QUOTE NOW',
+    pricing_eyebrow: 'Simple, Transparent Pricing', pricing_title: 'What Does It Cost?',
+    grand_opening: 'Grand Opening Offer', grand_opening_sub: 'Special launch prices — limited time only. Book now to lock in your rate!',
+    svc_card1_title: 'Express Pickup &amp; Drop-off', svc_card1_was: 'Was £15.00', svc_card1_save: 'Save £8 · First 2 miles included',
+    svc_card1_desc: "For items already packed or pre-paid &lsquo;Click &amp; Collect&rsquo;. Fast door-to-door delivery.",
+    svc_card1_li1: 'Documents, parcels &amp; pre-packed items',
+    svc_card2_title: 'Personal Shopping Service', svc_card2_was: 'Was £20.00', svc_card2_save: 'Save £10 · + delivery charge on top',
+    svc_card2_desc: 'We go into the store, pick the items on your list, and deliver them to you. <em>Cost of items not included.</em>',
+    svc_card2_li1: 'Supermarkets, pharmacies &amp; more', svc_card2_li2: 'Full receipt provided on delivery',
+    surcharge_title: 'Surcharges &amp; Additional Rates',
+    sur_mileage: 'Mileage', sur_mileage_sub: 'First 2 miles included, then £1.00 per mile',
+    sur_sameday: 'Same-Day Delivery', sur_sameday_sub: 'Perfect for urgent local parcels',
+    sur_midnight: 'Midnight Express', sur_midnight_time: '12am – 6am', sur_midnight_sub: 'Special late-night rate',
+    payment_title: '💳 Accepted Payment Methods',
+    payment_note: 'Full details will be provided upon booking confirmation.',
+    payment_note2: 'Payment is collected after delivery is confirmed. No upfront charge.',
+    booking_eyebrow: 'Book Your Delivery', booking_title: 'Request a Delivery',
+    booking_disclaimer: '<strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos). Thank you for understanding.',
+    pricing_disclaimer: '<strong>Important:</strong> We specialise in light removals and small items. We <strong>DO NOT</strong> move large furniture (e.g. 3-seater sofas, wardrobes, or pianos).',
+    step1_title: 'Your Details', contact_info: 'Contact Information',
+    label_name: 'Full Name', label_phone: 'WhatsApp / Phone', label_service: 'Service Type',
+    label_pickup: 'Pickup Address (Full Address)', label_delivery: 'Delivery Address (Full Address)',
+    label_pudt: 'Pickup Date &amp; Time', label_dldt: 'Delivery Date &amp; Time',
+    label_date: 'Date', label_time: 'Time', label_items: 'Item Description',
+    label_weight: 'Estimated Weight', label_notes: 'Special Instructions',
+    label_contact_method: 'Preferred Contact Method',
+    opt_select: '— Select a service —', opt_express: 'Express Delivery (from £7)', opt_shopping: 'Shopping Service (from £10)',
+    opt_errands: 'Personal Errands', opt_documents: 'Business Documents', opt_gifts: 'Gifts &amp; Hampers', opt_urgent: 'Urgent Essentials',
+    delivery_details: 'Delivery Details',
+    step2_title: 'Confirm &amp; Submit',
+    decl_legal: 'I confirm the items are <strong>light &amp; non-furniture</strong> (no sofas, wardrobes or pianos).',
+    decl_privacy: 'I agree to the <a href="#" onclick="openPrivacy();return false">Privacy Policy</a>.',
+    btn_submit: 'Request Booking',
+    success_title: 'Booking Request Received!',
+    success_sub: 'Thank you for choosing Solent Runner. We have received your details and will contact you shortly via WhatsApp or Email to confirm your booking.',
+    success_wa: '💬 WhatsApp Us',
+    success_back: 'Back to Home',
+    footer_tagline: 'Portsmouth\'s personal courier — fast, trusted, one-to-one.',
+    footer_rights: '© 2026 Solent Runner. All rights reserved. Registered as a Sole Trader in the UK.',
+    footer_legal: 'Solent Runner is a trading name of <strong>Ming Chak Lai</strong>.<br>Serving Portsmouth &bull; Havant &bull; Cosham.',
+    footer_hours_title: 'Operating Hours',
+    footer_hours_body: 'Flexible service based on availability.<br>For the fastest response and to check if we are running today, please WhatsApp us.',
+    footer_wa: 'WhatsApp Us',
+    footer_privacy: 'Privacy Policy',
+    fab_label: 'QUOTE NOW',
+    decl_box_title: '⚠ Prohibited Items Declaration',
+    decl_box_body: 'By ticking this box, I confirm that this delivery does not contain <strong>drugs, explosives, flammables, tobacco, alcohol, or any illegal goods under UK law.</strong><br><br>I accept full legal responsibility for the contents of this delivery and understand that <strong>Solent Runner</strong> is not liable for any unlawful items provided by the customer.',
+    decl_confirm: 'I confirm the items are safe and legal to transport.',
+    decl_error: '⛔ You must confirm your items are legal to transport.',
+    consent_label: 'I have read and agree to the <a onclick="openPrivacy();return false" href="#">Privacy Policy</a> and confirm that no prohibited items are included in this request.',
+    consent_error: '⚠ Please read and accept the Privacy Policy before submitting.',
   },
   'zh-tw': {
     brand_name: '速倫跑腿',
@@ -752,6 +792,57 @@ var T = {
     svc2_tasks: ['緊急合約文件遞送','已簽署文件快遞','辦公室物資補充','銀行及法律文件遞送'],
     svc3_tasks: ['同小時緊急快送','鑰匙、充電器及遺忘物品','醫療用品及器材','緊急家用必需品'],
     svc4_tasks: ['生日及節日禮物','精選禮籃代為組裝','花店及蛋糕代取','附帶個人手寫訊息'],
+    nav_about: '關於我們', nav_pricing: '收費', nav_booking: '預約', nav_quote: '立即報價',
+    pricing_eyebrow: '簡單透明的收費', pricing_title: '費用是多少？',
+    grand_opening: '開業優惠', grand_opening_sub: '限時特惠價格，立即預約鎖定優惠！',
+    svc_card1_title: '快速取件 &amp; 送達', svc_card1_was: '原價 £15.00', svc_card1_save: '節省 £8 · 首 2 英里包含在內',
+    svc_card1_desc: '適用於已包裝好或已預付的「到店取貨」商品，快速門對門送達。',
+    svc_card1_li1: '文件、包裹及已包裝物品',
+    svc_card2_title: '私人購物服務', svc_card2_was: '原價 £20.00', svc_card2_save: '節省 £10 · 另加配送費',
+    svc_card2_desc: '我們親赴商店，依您的清單採購商品並送達。<em>商品費用另計。</em>',
+    svc_card2_li1: '超市、藥局等', svc_card2_li2: '送達時提供購物收據',
+    surcharge_title: '附加費 &amp; 額外收費',
+    sur_mileage: '里程費', sur_mileage_sub: '首 2 英里免費，之後每英里 £1.00',
+    sur_sameday: '即日配送', sur_sameday_sub: '適合緊急本地包裹',
+    sur_midnight: '深夜快遞', sur_midnight_time: '凌晨 12 時至 6 時', sur_midnight_sub: '特別深夜收費',
+    payment_title: '💳 接受的付款方式',
+    payment_note: '確認預約後將提供完整付款詳情。',
+    payment_note2: '付款在確認送達後收取，無需預先付款。',
+    booking_eyebrow: '預約送貨', booking_title: '提交送貨申請',
+    booking_disclaimer: '<strong>重要：</strong>我們專注於輕型搬運及小型物品。我們<strong>不提供</strong>大型家具搬運服務（例如梳化、衣櫃或鋼琴）。感謝理解。',
+    pricing_disclaimer: '<strong>重要：</strong>我們專注於輕型搬運及小型物品。我們<strong>不提供</strong>大型家具搬運服務（例如梳化、衣櫃或鋼琴）。',
+    step1_title: '您的資料', contact_info: '聯絡資料',
+    label_name: '全名', label_phone: 'WhatsApp / 電話', label_service: '服務類型',
+    label_pickup: '取貨地址（完整地址）', label_delivery: '送貨地址（完整地址）',
+    label_pudt: '取貨日期 &amp; 時間', label_dldt: '送貨日期 &amp; 時間',
+    label_date: '日期', label_time: '時間', label_items: '物品說明',
+    label_weight: '估計重量', label_notes: '特別要求',
+    label_contact_method: '首選聯絡方式',
+    opt_select: '— 請選擇服務 —', opt_express: '快遞服務（起價 £7）', opt_shopping: '購物服務（起價 £10）',
+    opt_errands: '私人跑腿', opt_documents: '商業文件', opt_gifts: '禮品 &amp; 禮籃', opt_urgent: '緊急必需品',
+    delivery_details: '送貨詳情',
+    step2_title: '確認 &amp; 提交',
+    decl_legal: '我確認物品屬於<strong>輕型非家具類</strong>（無梳化、衣櫃或鋼琴）。',
+    decl_privacy: '我同意<a href="#" onclick="openPrivacy();return false">隱私政策</a>。',
+    btn_submit: '提交預約申請',
+    success_title: '預約申請已收到！',
+    success_sub: '感謝您選擇速倫跑腿。我們已收到您的資料，將盡快透過 WhatsApp 或電子郵件聯絡您確認預約。',
+    success_wa: '💬 WhatsApp 聯絡',
+    success_back: '返回主頁',
+    footer_tagline: '樸次茅斯的私人快遞——快速、可靠、一對一服務。',
+    footer_rights: '© 2026 速倫跑腿。保留所有權利。英國獨資經營。',
+    footer_legal: '速倫跑腿為 <strong>Ming Chak Lai</strong> 的交易名稱。<br>服務範圍：樸次茅斯 &bull; 哈文特 &bull; 科沙姆。',
+    footer_hours_title: '營業時間',
+    footer_hours_body: '服務時間因應需求而靈活安排。<br>如需最快回覆或查詢當天是否有服務，請透過 WhatsApp 聯絡我們。',
+    footer_wa: 'WhatsApp 聯絡',
+    footer_privacy: '隱私政策',
+    fab_label: '立即報價',
+    decl_box_title: '⚠ 禁運物品聲明',
+    decl_box_body: '勾選此欄表示我確認本次配送不包含<strong>毒品、爆炸物、易燃物、煙草、酒精或任何英國法律禁止的物品。</strong><br><br>我承擔本次配送物品的全部法律責任，並理解速倫跑腿對客戶提供的任何違禁物品概不負責。',
+    decl_confirm: '我確認物品安全合法，可以運輸。',
+    decl_error: '⛔ 您必須確認物品合法方可繼續。',
+    consent_label: '我已閱讀並同意<a onclick="openPrivacy();return false" href="#">隱私政策</a>，並確認本次申請不包含任何禁運物品。',
+    consent_error: '⚠ 請閱讀並接受隱私政策後再提交。',
   },
   'zh-cn': {
     brand_name: '速伦跑腿',
@@ -765,6 +856,57 @@ var T = {
     svc2_tasks: ['紧急合同文件递送','已签署文件快递','办公室物资补充','银行及法律文件递送'],
     svc3_tasks: ['同小时紧急快送','钥匙、充电器及遗忘物品','医疗用品及器材','紧急家用必需品'],
     svc4_tasks: ['生日及节日礼物','精选礼篮代为组装','花店及蛋糕代取','附带个人手写留言'],
+    nav_about: '关于我们', nav_pricing: '收费', nav_booking: '预约', nav_quote: '立即报价',
+    pricing_eyebrow: '简单透明的收费', pricing_title: '费用是多少？',
+    grand_opening: '开业优惠', grand_opening_sub: '限时特惠价格，立即预约锁定优惠！',
+    svc_card1_title: '快速取件 &amp; 送达', svc_card1_was: '原价 £15.00', svc_card1_save: '节省 £8 · 首 2 英里包含在内',
+    svc_card1_desc: '适用于已包装好或已预付的"到店取货"商品，快速门对门送达。',
+    svc_card1_li1: '文件、包裹及已包装物品',
+    svc_card2_title: '私人购物服务', svc_card2_was: '原价 £20.00', svc_card2_save: '节省 £10 · 另加配送费',
+    svc_card2_desc: '我们亲赴商店，依您的清单采购商品并送达。<em>商品费用另计。</em>',
+    svc_card2_li1: '超市、药局等', svc_card2_li2: '送达时提供购物收据',
+    surcharge_title: '附加费 &amp; 额外收费',
+    sur_mileage: '里程费', sur_mileage_sub: '首 2 英里免费，之后每英里 £1.00',
+    sur_sameday: '即日配送', sur_sameday_sub: '适合紧急本地包裹',
+    sur_midnight: '深夜快递', sur_midnight_time: '凌晨 12 时至 6 时', sur_midnight_sub: '特别深夜收费',
+    payment_title: '💳 接受的付款方式',
+    payment_note: '确认预约后将提供完整付款详情。',
+    payment_note2: '付款在确认送达后收取，无需预先付款。',
+    booking_eyebrow: '预约送货', booking_title: '提交送货申请',
+    booking_disclaimer: '<strong>重要：</strong>我们专注于轻型搬运及小型物品。我们<strong>不提供</strong>大型家具搬运服务（例如沙发、衣柜或钢琴）。感谢理解。',
+    pricing_disclaimer: '<strong>重要：</strong>我们专注于轻型搬运及小型物品。我们<strong>不提供</strong>大型家具搬运服务（例如沙发、衣柜或钢琴）。',
+    step1_title: '您的资料', contact_info: '联络资料',
+    label_name: '全名', label_phone: 'WhatsApp / 电话', label_service: '服务类型',
+    label_pickup: '取货地址（完整地址）', label_delivery: '送货地址（完整地址）',
+    label_pudt: '取货日期 &amp; 时间', label_dldt: '送货日期 &amp; 时间',
+    label_date: '日期', label_time: '时间', label_items: '物品说明',
+    label_weight: '预计重量', label_notes: '特别要求',
+    label_contact_method: '首选联络方式',
+    opt_select: '— 请选择服务 —', opt_express: '快递服务（起价 £7）', opt_shopping: '购物服务（起价 £10）',
+    opt_errands: '私人跑腿', opt_documents: '商业文件', opt_gifts: '礼品 &amp; 礼篮', opt_urgent: '紧急必需品',
+    delivery_details: '送货详情',
+    step2_title: '确认 &amp; 提交',
+    decl_legal: '我确认物品属于<strong>轻型非家具类</strong>（无沙发、衣柜或钢琴）。',
+    decl_privacy: '我同意<a href="#" onclick="openPrivacy();return false">隐私政策</a>。',
+    btn_submit: '提交预约申请',
+    success_title: '预约申请已收到！',
+    success_sub: '感谢您选择速伦跑腿。我们已收到您的资料，将尽快通过 WhatsApp 或电子邮件联络您确认预约。',
+    success_wa: '💬 WhatsApp 联络',
+    success_back: '返回主页',
+    footer_tagline: '朴次茅斯的私人快递——快速、可靠、一对一服务。',
+    footer_rights: '© 2026 速伦跑腿。保留所有权利。英国独资经营。',
+    footer_legal: '速伦跑腿为 <strong>Ming Chak Lai</strong> 的交易名称。<br>服务范围：朴次茅斯 &bull; 哈文特 &bull; 科沙姆。',
+    footer_hours_title: '营业时间',
+    footer_hours_body: '服务时间因应需求灵活安排。<br>如需最快回复或查询当天是否有服务，请通过 WhatsApp 联络我们。',
+    footer_wa: 'WhatsApp 联络',
+    footer_privacy: '隐私政策',
+    fab_label: '立即报价',
+    decl_box_title: '⚠ 禁运物品声明',
+    decl_box_body: '勾选此栏表示我确认本次配送不包含<strong>毒品、爆炸物、易燃物、烟草、酒精或任何英国法律禁止的物品。</strong><br><br>我承担本次配送物品的全部法律责任，并理解速伦跑腿对客户提供的任何违禁物品概不负责。',
+    decl_confirm: '我确认物品安全合法，可以运输。',
+    decl_error: '⛔ 您必须确认物品合法方可继续。',
+    consent_label: '我已阅读并同意<a onclick="openPrivacy();return false" href="#">隐私政策</a>，并确认本次申请不包含任何禁运物品。',
+    consent_error: '⚠ 请阅读并接受隐私政策后再提交。',
   }
 };
 
@@ -774,14 +916,26 @@ function setLang(lang, btn) {
   document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
   var t = T[lang];
+  if (!t) return;
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
     var k = el.getAttribute('data-i18n');
     if (t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el) {
+    var k = el.getAttribute('data-i18n-ph');
+    if (t[k] !== undefined) el.placeholder = t[k];
   });
   ['svc1','svc2','svc3','svc4'].forEach(function(id) {
     var ul = document.getElementById(id + '-list');
     if (ul && t[id + '_tasks']) ul.innerHTML = t[id + '_tasks'].map(function(x){ return '<li>' + x + '</li>'; }).join('');
   });
+  // Update select options
+  var sel = document.getElementById('f-service');
+  if (sel) {
+    var opts = ['opt_select','opt_express','opt_shopping','opt_errands','opt_documents','opt_gifts','opt_urgent'];
+    var vals = ['','express','shopping','errands','documents','gifts','urgent'];
+    sel.innerHTML = opts.map(function(k,i){ return '<option value="'+vals[i]+'">'+(t[k]||k)+'</option>'; }).join('');
+  }
 }
 
 // ── CONTACT METHOD ──

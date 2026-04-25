@@ -1079,10 +1079,12 @@ function handleSubmit(event) {
     reply_to:          phone,
   };
 
-  // Fire Sheets (non-blocking, no-cors — data saves even if fetch warns)
+  // Fire Sheets — use form-encoded so no-cors actually delivers the body
   if (SHEETS_URL) {
-    fetch(SHEETS_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body: JSON.stringify(params) })
-      .catch(function(){});  // suppress — no-cors always "fails" in browser but data saves
+    var formData = new URLSearchParams();
+    Object.keys(params).forEach(function(k){ formData.append(k, params[k] || ''); });
+    fetch(SHEETS_URL, { method:'POST', mode:'no-cors', body: formData })
+      .catch(function(){});
   }
 
   // Fire EmailJS (non-blocking) then always show success
